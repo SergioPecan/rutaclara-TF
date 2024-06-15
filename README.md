@@ -1,4 +1,4 @@
-# PSN SOCIAL NETWORK
+# RutaClara SOCIAL NETWORK
 
 - This app is for educational purpose only.
 - PSN Social Network tries to mimic a few functions of Twitter, including:
