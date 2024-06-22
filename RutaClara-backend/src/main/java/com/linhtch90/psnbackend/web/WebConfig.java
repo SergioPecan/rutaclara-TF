@@ -16,7 +16,7 @@ public class WebConfig implements WebMvcConfigurer {
         String clientUrl = dotenv.get("CLIENT_URL");
 
         registry.addMapping("/**")
-                .allowedOrigins(clientUrl,"http://localhost:3000") // Permite solicitudes CORS desde este origen. Cambia esto a la URL de tu cliente.
+                .allowedOrigins(clientUrl, "http://localhost:3000", "https://rutaclarasocialnetwork-production-5f1d.up.railway.app") // Agrega el origen problemático a la lista de orígenes permitidos.
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD") // Permite estos métodos.
                 .allowedHeaders("*") // Permite todos los encabezados en las solicitudes.
                 .exposedHeaders("*") // Expone todos los encabezados en las respuestas.
