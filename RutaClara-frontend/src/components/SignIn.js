@@ -7,11 +7,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/esm/Container";
-
+import http  from "../app/axiosConfig";
 import { RiLoginBoxLine } from "react-icons/ri";
 
 import styles from "./styles/SignIn.module.css";
-import axios from "axios";
+
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
@@ -26,7 +26,7 @@ function SignIn() {
   });
 
   async function postSignInInfo(inputData) {
-    const response = await axios({
+    const response = await http({
       method: "post",
       url: "/api/v1/users/signin",
       data: {

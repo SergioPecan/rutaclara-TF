@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import http  from "../app/axiosConfig";
 
-import axios from "axios";
 import imageCompression from "browser-image-compression";
 
 import { ToastContainer, toast } from "react-toastify";
@@ -66,7 +66,7 @@ function PostCompose() {
 
   async function createPost(inputContent) {
     try {
-      const response = await axios({
+      const response = await http({
         method: "post",
         url: "/api/v1/insertpost",
         headers: {
@@ -108,7 +108,7 @@ function PostCompose() {
       return;
     }
 
-    compressImageFile(e);
+    compressImageFile(e).then(r => console.log(r));
   }
 
   function fileToBase64(file, cb) {
@@ -150,7 +150,7 @@ function PostCompose() {
 
   async function handleCreatePost(e) {
     e.preventDefault();
-    createPost(postContent);
+    await createPost(postContent);
     dispatch(getFollowingPosts());
   }
 

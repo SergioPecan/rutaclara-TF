@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import http  from "../../app/axiosConfig";
 
 const initialState = {
   followingPosts: null,
@@ -8,7 +8,7 @@ const initialState = {
 export const getFollowingPosts = createAsyncThunk(
   "/api/v1/followingposts",
   async (thunkAPI) => {
-    const response = await axios({
+    const response = await http({
       method: "post",
       url: "/api/v1/followingposts",
       headers: {
@@ -24,7 +24,7 @@ export const getFollowingPosts = createAsyncThunk(
 );
 
 async function insertComment(postId, commentContent) {
-  const response = await axios({
+  const response = await http({
     method: "post",
     url: "/api/v1/insertcomment",
     headers: {
@@ -44,7 +44,7 @@ async function insertComment(postId, commentContent) {
 }
 
 async function updateLove(postId, currentUserId) {
-    const response = await axios({
+    const response = await http({
         method: "post",
         url: "/api/v1/lovepost",
         headers: {
@@ -60,7 +60,7 @@ async function updateLove(postId, currentUserId) {
 }
 
 async function updateShare(postId, currentUserId) {
-    const response = await axios({
+    const response = await http({
         method: "post",
         url: "/api/v1/sharepost",
         headers: {

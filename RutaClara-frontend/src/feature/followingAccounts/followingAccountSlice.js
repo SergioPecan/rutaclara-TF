@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import http  from "../../app/axiosConfig";
 
 const initialState = {
   followingAccounts: null,
@@ -9,7 +9,7 @@ const initialState = {
 export const getFollowingAccounts = createAsyncThunk(
   "/api/v1/users/getfollowing",
   async (thunkAPI) => {
-    const response = await axios({
+    const response = await http({
       method: "post",
       url: "/api/v1/users/getfollowing",
       headers: {
@@ -27,7 +27,7 @@ export const getFollowingAccounts = createAsyncThunk(
 export const getFollowerAccounts = createAsyncThunk(
   "/api/v1/users/getfollower",
   async (thunkAPI) => {
-    const response = await axios({
+    const response = await http({
       method: "post",
       url: "/api/v1/users/getfollower",
       headers: {
@@ -44,7 +44,7 @@ export const getFollowerAccounts = createAsyncThunk(
 export const getAllAccounts = createAsyncThunk(
   "/api/v1/users",
   async (thunkAPI) => {
-    const response = await axios({
+    const response = await http({
       method: "post",
       url: "/api/v1/users",
       headers: {
@@ -58,7 +58,7 @@ export const getAllAccounts = createAsyncThunk(
 export const unfollowAccount = createAsyncThunk(
   "/api/v1/users/unfollow",
   async ({followedId, followerId}, thunkAPI) => {
-    const response = await axios({
+    const response = await http({
       method: "post",
       url: "/api/v1/users/unfollow",
       headers: {
@@ -76,7 +76,7 @@ export const unfollowAccount = createAsyncThunk(
 export const followAccount = createAsyncThunk(
   "/api/v1/users/follow",
   async ({followedId, followerId}, thunkAPI) => {
-    const response = await axios({
+    const response = await http({
       method: "post",
       url: "/api/v1/users/follow",
       headers: {

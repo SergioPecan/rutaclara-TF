@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import http  from "../../app/axiosConfig";
 
 const initialState = {
   profileId: null,
@@ -10,7 +10,7 @@ const initialState = {
 export const getProfilePosts = createAsyncThunk(
   "api/v1/users/getProfilePosts",
   async (userId, thunkAPI) => {
-    const response = await axios({
+    const response = await http({
       method: "post",
       url: "/api/v1/myposts",
       headers: {
@@ -27,7 +27,7 @@ export const getProfilePosts = createAsyncThunk(
 export const getProfileInfo = createAsyncThunk(
   "/api/v1/users/profile",
   async (userId, thunkAPI) => {
-    const response = await axios({
+    const response = await http({
       method: "post",
       url: "/api/v1/users/profile",
       headers: {
