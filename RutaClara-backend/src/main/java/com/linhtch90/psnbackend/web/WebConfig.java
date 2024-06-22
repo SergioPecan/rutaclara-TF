@@ -1,6 +1,8 @@
 package com.linhtch90.psnbackend.web;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import org.springframework.context.annotation.Configuration;
+
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -8,11 +10,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**")
-                .allowedOrigins("*")
-                .allowedMethods("*")
-                .allowedHeaders("*")
-                .allowCredentials(true)
-                .maxAge(3600);
+        Dotenv dotenv = Dotenv.load();
+        String clientUrl = dotenv.get("CLIENT_URL");
+
+        registry.addMapping("/**")
+                .allowedOrigins(clientUrl,"http://localhost:3000")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "HEAD") // Permite estos métodos.
+                .allowCredentials(true);
     }
 }
