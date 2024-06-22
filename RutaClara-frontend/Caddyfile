@@ -34,4 +34,13 @@
 
 	# if path doesn't exist, redirect it to 'index.html' for client side routing
 	try_files {path} /index.html
+
+	# proxy para las solicitudes que comiencen con /api
+	reverse_proxy /api/* https://rutaclarasocialnetwork-production.up.railway.app {
+		header_up Host {http.reverse_proxy.upstream.hostport}
+		header_up X-Real-IP {http.request.remote}
+		header_up X-Forwarded-For {http.request.remote}
+		header_up X-Forwarded-Port {http.request.port}
+		header_up X-Forwarded-Proto {http.request.scheme}
+	}
 }
