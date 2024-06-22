@@ -5,6 +5,7 @@ const http = axios.create({
     headers: {
         'Content-type': 'application/json',
     },
-    });
-export default http;
+    withCredentials: true, // Include this if you need to send credentials (cookies, HTTP authentication) in your CORS requests
+});
 
+export default http;
