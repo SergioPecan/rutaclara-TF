@@ -4,7 +4,7 @@ import http  from "../../app/axiosConfig";
 const initialState = {
   followingPosts: null,
 };
-
+console.log(localStorage.getItem("psnToken"));
 export const getFollowingPosts = createAsyncThunk(
   "/api/v1/followingposts",
   async (thunkAPI) => {
