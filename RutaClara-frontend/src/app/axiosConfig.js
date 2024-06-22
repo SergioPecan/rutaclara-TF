@@ -1,4 +1,11 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://rutaclarasocialnetwork-production.up.railway.app';
+const http = axios.create({
+    baseURL: 'http://localhost:8080',
+    headers: {
+        'Content-type': 'application/json',
+    },
+    });
+
+export default http;
 

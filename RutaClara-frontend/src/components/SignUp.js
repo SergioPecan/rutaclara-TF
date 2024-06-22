@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
-import axios from "axios";
+import http  from "../app/axiosConfig";
 
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -30,7 +30,7 @@ function SignUp() {
   });
 
   async function postSignUpInfo(inputData) {
-    const response = await axios({
+    const response = await http({
       method: "post",
       url: "/api/v1/users/save",
       data: {
