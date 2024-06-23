@@ -1,13 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-
-const http = axios.create({
-    baseURL: "https://rutaclarasocialnetwork-production.up.railway.app",
-    headers: {
-        "Content-type": "application/json",
-        Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxseWJAZ21haWwuY29tIiwiaWF0IjoxNjQwNzY3Nzk4LCJleHAiOjE2NDA4NTQxOTh9.h1J_eu8ipxU4SebsiSz375W_x8PgyY2KRl8YP7Ri4g_LvjhEHM4Y0bk1ydqhy2g29KI6K_HWQQ099IWJvXyohQ,
-    },
-})
+import http  from "../../app/axiosConfig";
 
 const initialState = {
   followingPosts: null,
@@ -19,6 +11,9 @@ export const getFollowingPosts = createAsyncThunk(
     const response = await http({
       method: "post",
       url: "/api/v1/followingposts",
+      headers: {
+        Authorization: localStorage.getItem("psnToken"),
+      },
       data: {
         id: localStorage.getItem("psnUserId"),
       },
@@ -32,6 +27,9 @@ async function insertComment(postId, commentContent) {
   const response = await http({
     method: "post",
     url: "/api/v1/insertcomment",
+    headers: {
+      Authorization: localStorage.getItem("psnToken"),
+    },
     data: {
       commentEntity: {
         userId: localStorage.getItem("psnUserId"),
@@ -49,6 +47,9 @@ async function updateLove(postId, currentUserId) {
     const response = await http({
         method: "post",
         url: "/api/v1/lovepost",
+        headers: {
+         Authorization: localStorage.getItem("psnToken"),
+        },
         data: {
             id1: postId,
             id2: currentUserId,
@@ -62,6 +63,9 @@ async function updateShare(postId, currentUserId) {
     const response = await http({
         method: "post",
         url: "/api/v1/sharepost",
+        headers: {
+         Authorization: localStorage.getItem("psnToken"),
+        },
         data: {
             id1: postId,
             id2: currentUserId,

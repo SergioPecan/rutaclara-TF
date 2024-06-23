@@ -1,16 +1,16 @@
-POST http://localhost:8080/api/v1/users/save
+POST https://rutaclarasocialnetwork-production.up.railway.app/api/v1/users/save
 Content-Type: application/json
 
 {
-    "firstName": "Kelly",
-    "lastName": "Blue",
-    "email": "kellyb@gmail.com",
-    "password": "kellyblue",
-    "role": "user"
+    "firstName": "sKelly",
+    "lastName": "Bslue",
+    "email": "asd@gmail.com",
+    "password": "kesllyblue",
+    "role": "admin"
 }
 
 ###
-POST http://localhost:8080/api/v1/users/save
+POST https://rutaclarasocialnetwork-production.up.railway.app/api/v1/users/save
 Content-Type: application/json
 
 {
@@ -28,13 +28,13 @@ Content-Type: application/json
 {
     "firstName": "Tom",
     "lastName": "Green",
-    "email": "tomg@gmail.com",
+    "email": "tomsg@gmail.com",
     "password": "tomgreen",
     "role": "user"
 }
 
 ###
-POST http://localhost:8080/api/v1/users/signin
+POST https://rutaclarasocialnetwork-production.up.railway.app/api/v1/users/signin
 Content-Type: application/json
 
 {
@@ -43,16 +43,16 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8080/api/v1/users/signin
+POST https://rutaclarasocialnetwork-production.up.railway.app/api/v1/users/signin
 Content-Type: application/json
 
 {
-    "email": "tomg@gmail.com",
-    "password": "tomgreen"
+    "email": "kellsyb@gmail.com",
+    "password": "kesllyblue"
 }
 
 ###
-POST http://localhost:8080/api/v1/users/signin
+POST https://rutaclarasocialnetwork-production.up.railway.app/api/v1/users/signin
 Content-Type: application/json
 
 {
@@ -61,19 +61,20 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/v1/getdata
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJkYXZpZGJAZ21haWwuY29tIiwiaWF0IjoxNjQwNTQyNTM5LCJleHAiOjE2NDA2Mjg5Mzl9.5JawwMfRRDD-2SAFeksvSt_LAc5rT3zhm-4kbwR9JYHf8ravY9gRPFU4bL5stNss1_0xBsUmNvOUmJyCIjjBgw
+GET https://rutaclarasocialnetwork-production.up.railway.app/api/v1/getdata
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxsc3liQGdtYWlsLmNvbSIsImlhdCI6MTcxOTEwMTM5MCwiZXhwIjoxNzE5MTg3NzkwfQ.RxDGDux9IALiDUA2s5srl8gyt1NE4ai1OBIYinLWWYny0jUcYsQEcpYTff6EE57qTVVObfdLr9V98Mxd1Cz0Xg
 
 ###
 GET http://localhost:8080/api/v1/users
 
 ###
-GET http://localhost:8080/api/v1/users/61c83bc814313b1c882325c4
+GET https://rutaclarasocialnetwork-production.up.railway.app/api/v1/users/6677472e2f2c871ddb630160
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxsc3liQGdtYWlsLmNvbSIsImlhdCI6MTcxOTEwMTM5MCwiZXhwIjoxNzE5MTg3NzkwfQ.RxDGDux9IALiDUA2s5srl8gyt1NE4ai1OBIYinLWWYny0jUcYsQEcpYTff6EE57qTVVObfdLr9V98Mxd1Cz0Xg
 
 ###
 # make a post
-POST http://localhost:8080/api/v1/insertpost
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxseWJAZ21haWwuY29tIiwiaWF0IjoxNjQwNzc0NTM2LCJleHAiOjE2NDA4NjA5MzZ9.gDoJd-C35xe4TKt_QGtHpxa6OkRkfH-Ij9cam6en4VUUXrch4juTuoXvIXklwfGh7TqqSjyH_gUplHuGnVNelQ
+POST https://rutaclarasocialnetwork-production.up.railway.app/api/v1/insertpost
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxsc3liQGdtYWlsLmNvbSIsImlhdCI6MTcxOTEwMTM5MCwiZXhwIjoxNzE5MTg3NzkwfQ.RxDGDux9IALiDUA2s5srl8gyt1NE4ai1OBIYinLWWYny0jUcYsQEcpYTff6EE57qTVVObfdLr9V98Mxd1Cz0Xg
 Content-Type: application/json
 
 {
@@ -89,7 +90,7 @@ Content-Type: application/json
 ###
 # comment a post
 POST http://localhost:8080/api/v1/insertcomment
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxseWJAZ21haWwuY29tIiwiaWF0IjoxNjQwNzEzNTM2LCJleHAiOjE2NDA3OTk5MzZ9.bI9eR0_Bny74qL5qusoXs8UZPPFSfc7xRNrLYV5hETtsRhP5kxTpM_bRK7V-X9zfrQZAHKu85QV4kRYRyq7pBQ
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxseWJAZ21haWwuY29tIiwiaWF0IjoxNjQwNzUxMjI4LCJleHAiOjE2NDA4Mzc2Mjh9.yL0WJkClHtdIZQV9KfvyHExI0B3NX9TGxNCn4B2Th2cACPp0M_I0sG9V1f9oecDpuK6wYmSeVLlBuUI6Rber8g
 Content-Type: application/json
 
 {
@@ -138,7 +139,7 @@ Content-Type: application/json
 
 ###
 # get list of following users
-GET http://localhost:8080/api/v1/users/getfollowing/61cbf7b3d2c64c62de758285
+GET https://rutaclarasocialnetwork-production.up.railway.app/api/v1/followingposts
 Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxseWJAZ21haWwuY29tIiwiaWF0IjoxNjQwNzY3Nzk4LCJleHAiOjE2NDA4NTQxOTh9.h1J_eu8ipxU4SebsiSz375W_x8PgyY2KRl8YP7Ri4g_LvjhEHM4Y0bk1ydqhy2g29KI6K_HWQQ099IWJvXyohQ
 
 ###
@@ -149,19 +150,19 @@ Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJ0b21nQGdtYWlsLmNv
 ###
 # get my own posts
 GET http://localhost:8080/api/v1/myposts
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxseWJAZ21haWwuY29tIiwiaWF0IjoxNjQwNzY3Nzk4LCJleHAiOjE2NDA4NTQxOTh9.h1J_eu8ipxU4SebsiSz375W_x8PgyY2KRl8YP7Ri4g_LvjhEHM4Y0bk1ydqhy2g29KI6K_HWQQ099IWJvXyohQ
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxsc3liQGdtYWlsLmNvbSIsImlhdCI6MTcxOTEwMDg1MSwiZXhwIjoxNzE5MTg3MjUxfQ.07yjSTRff1NizJX1qruS_gUMwjX9JMx_yOUMgblnyb2R7oGS-0ZCdKGKxxNws40JwWV1dfZunhdruvCULNJfDA
 Content-Type: application/json
 
 {
-    "id": "61cb456dcc98c61c22bc37d9"
+    "id": "6677612e2d703e51e6121be6"
 }
 
 ###
 # get posts from following users
-GET http://localhost:8080/api/v1/followingposts
-Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxseWJAZ21haWwuY29tIiwiaWF0IjoxNjQwNzY3Nzk4LCJleHAiOjE2NDA4NTQxOTh9.h1J_eu8ipxU4SebsiSz375W_x8PgyY2KRl8YP7Ri4g_LvjhEHM4Y0bk1ydqhy2g29KI6K_HWQQ099IWJvXyohQ
+GET https://rutaclarasocialnetwork-production.up.railway.app/api/v1/followingposts
+Authorization: eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxsc3liQGdtYWlsLmNvbSIsImlhdCI6MTcxOTEwMDg1MSwiZXhwIjoxNzE5MTg3MjUxfQ.07yjSTRff1NizJX1qruS_gUMwjX9JMx_yOUMgblnyb2R7oGS-0ZCdKGKxxNws40JwWV1dfZunhdruvCULNJfDA
 Content-Type: application/json
 
 {
-    "id": "61cb456dcc98c61c22bc37d9"
+    "id": "6677612e2d703e51e6121be6"
 }

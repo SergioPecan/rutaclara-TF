@@ -97,6 +97,10 @@ public class UserController {
 
     @GetMapping("/getdata")
     public ResponseEntity<String> testAfterLogin(Principal p) {
-        return ResponseEntity.ok("Welcome. You are: " + p.getName());
+        if (p == null) {
+            return ResponseEntity.ok("No user is currently authenticated");
+        } else {
+            return ResponseEntity.ok("Welcome. You are: " + p.getName());
+        }
     }
 }
