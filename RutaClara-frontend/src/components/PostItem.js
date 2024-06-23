@@ -149,7 +149,7 @@ function PostItem(props) {
               className={`${styles.shareButton} mx-1 fs-4`}
               onClick={handleShareClick}
             >
-              <RiShareForwardFill className="text-success" />
+              <RiShareForwardFill className="text-primary" />
             </span>
             <span>
               {props.shareList.length > 0 ? props.shareList.length : null}
@@ -174,7 +174,7 @@ function PostItem(props) {
               <span className="mx-1">{commentContent.length}/100</span>
               <div className="ms-auto">
                 <Button
-                  variant="success"
+                  variant="primary"
                   className="p-1"
                   disabled={sendButtonDisable}
                   onClick={sendComment}
