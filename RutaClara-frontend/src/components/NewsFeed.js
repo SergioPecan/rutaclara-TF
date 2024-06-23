@@ -43,8 +43,8 @@ function NewsFeed() {
             <Col md="auto" className="text-sm-start text-center mb-sm-0 mb-3">
               <img src={logo} width="125" alt="logo" />
             </Col>
-            <Col className="text-sm-start text-center text-success mb-sm-0 mb-3">
-              <h1>Penguin Social Network</h1>
+            <Col className="text-sm-start text-center text-primary mb-sm-0 mb-3">
+              <h1>RutaClara Social Network</h1>
             </Col>
           </Row>
         </Col>
