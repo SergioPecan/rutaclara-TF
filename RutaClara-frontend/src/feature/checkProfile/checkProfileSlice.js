@@ -13,9 +13,7 @@ export const getProfilePosts = createAsyncThunk(
     const response = await http({
       method: "post",
       url: "/api/v1/myposts",
-      headers: {
-        Authorization: localStorage.getItem("psnToken"),
-      },
+
       data: {
         id: userId,
       },
@@ -30,9 +28,7 @@ export const getProfileInfo = createAsyncThunk(
     const response = await http({
       method: "post",
       url: "/api/v1/users/profile",
-      headers: {
-        Authorization: localStorage.getItem("psnToken"),
-      },
+
       data: {
         id: userId,
       },

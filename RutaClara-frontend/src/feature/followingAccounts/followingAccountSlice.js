@@ -12,9 +12,7 @@ export const getFollowingAccounts = createAsyncThunk(
     const response = await http({
       method: "post",
       url: "/api/v1/users/getfollowing",
-      headers: {
-        Authorization: localStorage.getItem("psnToken"),
-      },
+
       data: {
         id: localStorage.getItem("psnUserId"),
       },
@@ -30,9 +28,7 @@ export const getFollowerAccounts = createAsyncThunk(
     const response = await http({
       method: "post",
       url: "/api/v1/users/getfollower",
-      headers: {
-        Authorization: localStorage.getItem("psnToken"),
-      },
+
       data: {
         id: localStorage.getItem("psnUserId"),
       }
@@ -61,9 +57,7 @@ export const unfollowAccount = createAsyncThunk(
     const response = await http({
       method: "post",
       url: "/api/v1/users/unfollow",
-      headers: {
-        Authorization: localStorage.getItem("psnToken"),
-      },
+
       data: {
         id1: followedId,
         id2: followerId,

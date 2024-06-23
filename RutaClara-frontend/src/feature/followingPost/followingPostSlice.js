@@ -11,9 +11,7 @@ export const getFollowingPosts = createAsyncThunk(
     const response = await http({
       method: "post",
       url: "/api/v1/followingposts",
-      headers: {
-        Authorization: localStorage.getItem("psnToken"),
-      },
+
       data: {
         id: localStorage.getItem("psnUserId"),
       },
@@ -27,9 +25,7 @@ async function insertComment(postId, commentContent) {
   const response = await http({
     method: "post",
     url: "/api/v1/insertcomment",
-    headers: {
-      Authorization: localStorage.getItem("psnToken"),
-    },
+
     data: {
       commentEntity: {
         userId: localStorage.getItem("psnUserId"),
@@ -47,9 +43,7 @@ async function updateLove(postId, currentUserId) {
     const response = await http({
         method: "post",
         url: "/api/v1/lovepost",
-        headers: {
-         Authorization: localStorage.getItem("psnToken"),
-        },
+
         data: {
             id1: postId,
             id2: currentUserId,
@@ -63,9 +57,7 @@ async function updateShare(postId, currentUserId) {
     const response = await http({
         method: "post",
         url: "/api/v1/sharepost",
-        headers: {
-         Authorization: localStorage.getItem("psnToken"),
-        },
+
         data: {
             id1: postId,
             id2: currentUserId,
