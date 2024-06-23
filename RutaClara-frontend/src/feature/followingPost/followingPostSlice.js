@@ -4,8 +4,7 @@ import axios from "axios";
 const http = axios.create({
     baseURL: "https://rutaclarasocialnetwork-production.up.railway.app",
     headers: {
-        "Content-type": "application/json",
-        "Authorization": localStorage.getItem("psnToken"),
+        "Authorization": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJQU04iLCJzdWIiOiJrZWxseWJAZ21haWwuY29tIiwiaWF0IjoxNjQwNzY3Nzk4LCJleHAiOjE2NDA4NTQxOTh9.h1J_eu8ipxU4SebsiSz375W_x8PgyY2KRl8YP7Ri4g_LvjhEHM4Y0bk1ydqhy2g29KI6K_HWQQ099IWJvXyohQ",
     },
 })
 
