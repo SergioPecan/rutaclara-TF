@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/psn-social-network-public-sources.iml" filepath="$PROJECT_DIR$/.idea/psn-social-network-public-sources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RutaClara-frontend/RutaClara-frontend.iml" filepath="$PROJECT_DIR$/RutaClara-frontend/RutaClara-frontend.iml" />
     </modules>
   </component>
 </project>

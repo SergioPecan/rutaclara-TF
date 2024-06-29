@@ -1,0 +1,47 @@
+services:
+  frontend:
+    container_name: "frontend_layer"
+    hostname: "host-frontend"
+    build:
+      context: RutaClara-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./RutaClara-frontend:/app
+
+    depends_on:
+      - app
+  app:
+    container_name: "application_layer"
+    hostname: "host-app"
+    build:
+      context: RutaClara-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./RutaClara-backend:/app
+
+
+    environment:
+      DB_URI: mongodb://root:password@mongodb:27017/RutaClara?authSource=admin&readPreference=primary
+      CORS_ORIGIN: http://frontend_layer:3000
+      CLIENT_URL: https://rutaclarasocialnetwork-production.up.railway.app/
+
+    depends_on:
+      - mongodb
+  mongodb:
+    image: "mongo:4.2.16-bionic"
+    container_name: "database_layer"
+    hostname: "host-mongo"
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./db-data/mongo/:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: "RutaClaraDB"
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "password"
+
+
